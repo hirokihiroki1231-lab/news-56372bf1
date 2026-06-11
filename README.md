@@ -49,23 +49,23 @@ AかBでURLを開いた後:
 ## GitHub Pages 公開手順（一度だけ）
 
 > 公開されるのは「公開ニュースの要約」だけで、個人情報は含みません。
-> ページは noindex 設定で検索エンジンに載りません。
+> ページは noindex 設定で検索エンジンに載らず、**推測されにくいランダムなリポジトリ名**にすることで、
+> URLを知らない人には実質たどり着けないようにします（＝URLを他人に共有しないこと）。
 
 1. **GitHubアカウント**を用意（無料）: https://github.com/signup
-2. GitHubで**新しいリポジトリ**を作成（例: `daily-news`、Publicでよい）。
-3. PCのこのフォルダで以下を実行（`<ユーザー名>` は自分のGitHubユーザー名）:
+2. GitHubで**新しいリポジトリ**を作成。名前は**推測されにくいランダム名**にする（例: `news-56372bf1`）。
+   - Public で可（無料Pagesのため）。リポジトリ名がそのままURLの一部になります。
+3. PCのこのフォルダ（git初期化＆コミット済み）で以下を実行（`<ユーザー名>`=GitHubユーザー名、`<repo>`=上で付けたランダム名）:
    ```powershell
    cd "C:\Users\hirok\OneDrive\Desktop\inventory-system\daily-news"
-   git init
-   git add .
-   git commit -m "init: daily news PWA"
    git branch -M main
-   git remote add origin https://github.com/<ユーザー名>/daily-news.git
+   git remote add origin https://github.com/<ユーザー名>/<repo>.git
    git push -u origin main
    ```
    - 初回 push 時にブラウザでGitHubログインを求められます（Git Credential Manager）。一度承認すれば以後は自動です。
 4. GitHubのリポジトリ → **Settings → Pages** → Branch を `main` / `/(root)` にして Save。
-5. 数分後、`https://<ユーザー名>.github.io/daily-news/` で公開されます。これをスマホで開き、ホーム画面に追加。
+5. 数分後、`https://<ユーザー名>.github.io/<repo>/` で公開されます。これをスマホで開き、ホーム画面に追加。
+   - **このURLは他人に共有しないでください**（共有しなければ第三者は到達できません）。
 
 設定後は、スケジュールタスクが `data.json` 更新時に**自動で push**するため、公開ページも毎日2回自動更新されます。
 
