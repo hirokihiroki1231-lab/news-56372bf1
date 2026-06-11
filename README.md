@@ -78,5 +78,15 @@ cd "C:\Users\hirok\OneDrive\Desktop\inventory-system\daily-news"
 python scripts/add_entry.py new_entry.json
 ```
 
-## スケジュール変更
-Claudeアプリのサイドバー「Scheduled」→ `daily-news-digest` から時刻変更・一時停止が可能です。
+## 内容を調整する（config.json）
+`config.json` を編集すると、次回の自動実行から反映されます（再起動不要）。
+- `themeCountMin` / `themeCountMax` … テーマ数（例: 5固定にするなら両方 5）
+- `pointsPerThemeMin` / `pointsPerThemeMax` … 各テーマの要点数
+- `impactLines` … 「影響まとめ」の行数
+- `priorityCategories` … 優先する分野（並び順＝おおよその優先度）
+- `tone` … 文体の方針
+- `extraInstructions` … 自由な追加指示（例:「日本国内のニュースを多めに」）
+
+## 実行時刻・回数を変える
+Claudeアプリのサイドバー「**Scheduled**」→ `daily-news-digest` から、時刻変更・一時停止・1日1回への変更が可能です。
+（Claudeに「朝だけにして」等と頼んでもOK。現在は cron `3 10,22 * * *` ＝ 約10:00 / 約22:00 JST）

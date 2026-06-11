@@ -1,0 +1,28 @@
+{
+  "_comment": "ここを編集すると要約のスタイルを変えられます。スケジュール実行(daily-news-digest)が毎回これを読み込みます。実行時刻の変更はアプリの『Scheduled』サイドバーから。",
+
+  "themeCountMin": 5,
+  "themeCountMax": 6,
+  "pointsPerThemeMin": 3,
+  "pointsPerThemeMax": 5,
+  "impactLines": 3,
+
+  "priorityCategories": [
+    "経済・金融市場",
+    "企業・テクノロジー",
+    "政治・政策",
+    "国際情勢",
+    "社会・事件",
+    "市場の変化"
+  ],
+
+  "language": "ja",
+  "tone": "事実ベース・簡潔。推測を入れない。確度が低い情報は『未確認』と明記。",
+
+  "runLabels": {
+    "morning": "朝(10:00)",
+    "evening": "夜(22:00)"
+  },
+
+  "extraInstructions": ""
+}
