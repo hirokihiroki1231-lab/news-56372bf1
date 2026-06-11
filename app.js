@@ -70,7 +70,7 @@ function renderEntry(entry) {
       `<li class="${isUnverified(p) ? 'unverified' : ''}">${esc(p)}</li>`
     ).join('');
     return `
-      <section class="theme" data-theme="${i}">
+      <section class="theme tc${i % 6}" data-theme="${i}">
         <div class="theme-head">
           <span class="theme-num">${CIRCLED[i] || (i + 1)}</span>
           <span class="theme-title">${esc(t.title)}</span>
