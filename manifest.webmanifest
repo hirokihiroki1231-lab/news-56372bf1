@@ -1,0 +1,20 @@
+{
+  "name": "毎日ニュースまとめ",
+  "short_name": "ニュース",
+  "description": "直近の主要ニュースをテーマ別に自動要約。1日2回更新。",
+  "lang": "ja",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1020",
+  "theme_color": "#0b1020",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
