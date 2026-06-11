@@ -80,6 +80,19 @@ function renderEntry(entry) {
       </section>`;
   }).join('');
 
+  const nikkei = entry.nikkei;
+  const nikkeiHtml = (nikkei && (nikkei.points?.length || nikkei.market?.length)) ? `
+    <section class="nikkei">
+      <div class="nikkei-head"><span class="nikkei-badge">日経</span><h3>日経新聞まとめ</h3></div>
+      ${nikkei.market?.length ? `<div class="market-grid">${nikkei.market.map((m) => `
+        <div class="market-cell">
+          <div class="market-label">${esc(m.label)}</div>
+          <div class="market-value">${esc(m.value)}</div>
+          ${m.note ? `<div class="market-note ${isUnverified(m.note) ? 'unverified-text' : ''}">${esc(m.note)}</div>` : ''}
+        </div>`).join('')}</div>` : ''}
+      ${nikkei.points?.length ? `<ul class="points nikkei-points">${nikkei.points.map((p) => `<li class="${isUnverified(p) ? 'unverified' : ''}">${esc(p)}</li>`).join('')}</ul>` : ''}
+    </section>` : '';
+
   const impactHtml = entry.impact?.length ? `
     <div class="impact">
       <h3>📊 市場・生活への影響まとめ</h3>
@@ -97,6 +110,7 @@ function renderEntry(entry) {
   content.innerHTML = `
     <p class="entry-meta">${fmtDate(entry.date)}${entry.runLabel ? ' ・ ' + esc(entry.runLabel) : ''} 版</p>
     ${themesHtml}
+    ${nikkeiHtml}
     ${impactHtml}
     ${sourcesHtml}
     ${notesHtml}`;

@@ -1,5 +1,5 @@
 // Service worker: アプリ本体はキャッシュ優先、データは常に最新を取得
-const CACHE = 'news-shell-v2';
+const CACHE = 'news-shell-v3';
 const SHELL = [
   './',
   './index.html',

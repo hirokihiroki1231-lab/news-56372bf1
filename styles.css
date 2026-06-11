@@ -156,6 +156,48 @@ body {
 }
 .points li.unverified::before { background: #ffb86b; }
 
+/* 日経新聞まとめ */
+.nikkei {
+  --nk: #c8102e;
+  background: linear-gradient(180deg, rgba(200,16,46,.10), rgba(200,16,46,.03));
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--nk);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin: 18px 0 14px;
+}
+.nikkei-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.nikkei-head h3 { margin: 0; font-size: 1rem; }
+.nikkei-badge {
+  background: var(--nk);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+.market-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+@media (min-width: 480px) {
+  .market-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+.market-cell {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.market-label { font-size: .72rem; color: var(--muted); }
+.market-value { font-size: 1.05rem; font-weight: 800; margin: 2px 0; }
+.market-note { font-size: .74rem; color: var(--muted); line-height: 1.5; }
+.market-note.unverified-text { color: #ffb86b; }
+.nikkei-points li::before { background: var(--nk); }
+
 /* Impact box */
 .impact {
   background: linear-gradient(135deg, rgba(91,157,255,.12), rgba(124,92,255,.12));
